@@ -3,12 +3,9 @@
 // `total_cost` function from the previous exercise. It's not working though!
 // Why not? What should we do to fix it?
 // Execute `rustlings hint errors3` for hints!
-
-// I AM NOT DONE
-
 use std::num::ParseIntError;
 
-fn main() {
+fn main() -> Result<(), ParseIntError> {
     let mut tokens = 100;
     let pretend_user_input = "8";
 
@@ -16,9 +13,11 @@ fn main() {
 
     if cost > tokens {
         println!("You can't afford that many!");
+        Ok(())
     } else {
         tokens -= cost;
         println!("You now have {} tokens.", tokens);
+        Ok(())
     }
 }
 
